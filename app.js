@@ -82,3 +82,19 @@ new Vue({
         }
     }
 });
+
+new Vue({
+    el: '#vue-dynamic-css',
+    data: {
+        available: false,
+        nearby: false,
+    },
+    computed: {
+        compClasses: function () {
+            return {
+                available: this.available,
+                nearby: this.nearby
+            }
+        }
+    }
+});

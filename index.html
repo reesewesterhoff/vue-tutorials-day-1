@@ -82,6 +82,25 @@
         <p>Age + A = {{addToA}}</p>
         <p>Age + B = {{addToB}}</p>
     </div>
+
+    <!-- Dynamic CSS -->
+    <div id="vue-dynamic-css">
+        <h2>Dynamic CSS</h2>
+        <h3>Example 1</h3>
+        <!-- <div v-on:click="available = !available" v-bind:class="{available: available}">
+            <span>Taxi</span>
+        </div> -->
+
+        <h3>Example 2</h3>
+        <!-- click toggles the boolean values of property in vue -->
+        <button v-on:click="nearby = !nearby">Toggle Nearby</button>
+        <button v-on:click="available = !available">Toggle Available</button>
+        
+        <!-- has the computed class compClasses which is an object that has the properties of "nearby" and "available" -->
+        <div v-bind:class="compClasses">
+            <span>Taxi</span>
+        </div>
+    </div>
     <script src="app.js"></script>
 </body>
 
