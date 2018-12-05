@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,10 +9,11 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
     <title>VueJS Tutorials</title>
 </head>
+
 <body>
-    <h2>Data Binding</h2>
     <!-- id must be whatever you want the vue to control -->
     <div id="vue-app">
+        <h2>Data Binding</h2>
         <!-- passing data from vue to html -->
         <p>Name: {{name}}</p>
         <p>Job: {{job}}</p>
@@ -28,6 +30,8 @@
         <!-- renders html tags written in vue -->
         <p v-html="websiteTag"></p>
     </div>
+
+
     <!-- events tutorial -->
     <div id="vue-events">
         <h2>Events/Event Modifiers</h2>
@@ -60,8 +64,25 @@
         <!-- fires on keyup of alt+enter -->
         <input type="text" v-model="ageTwoWay" v-on:keyup.alt.enter="logAge" />
         <span>{{ageTwoWay}}</span>
+    </div>
 
+    <!-- Computed properties -->
+    <div id="vue-computed-properties">
+        <h2>Computed Properties</h2>
+        <button v-on:click="a++">Add To A</button>
+        <button v-on:click="b++">Add To B</button>
+        <button v-on:click="a--">Subtract From A</button>
+        <button v-on:click="b--">Subtract From B</button>
+        <button v-on:dblclick="a+=10">Dblclick Add 10 To A</button>
+        <p>A - {{a}}</p>
+        <p>B - {{b}}</p>
+        <!-- every time a value changes, vue runs both functions -->
+        <!-- if functions are methods with parentheses -->
+        <!-- if they are computed methods (no parentheses), only runs function that changes -->
+        <p>Age + A = {{addToA}}</p>
+        <p>Age + B = {{addToB}}</p>
     </div>
     <script src="app.js"></script>
 </body>
+
 </html>
