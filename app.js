@@ -21,6 +21,8 @@ new Vue({
         age: 23,
         x: 0,
         y: 0,
+        name: '',
+        ageTwoWay: '',
     },
     methods: {
         add: function(increment){
@@ -35,6 +37,13 @@ new Vue({
         },
         click: function(){
             alert('Google was clicked!');
+        },
+        logName: function(){
+            console.log('entered name');
+            
+        },
+        logAge: function(){
+            console.log('entered age');
         }
     }
 });

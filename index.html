@@ -45,7 +45,22 @@
         <div id="canvas" v-on:mousemove="updateXY">
             {{x}}, {{y}}
         </div>
+
+        <!-- prevents default action that happens on click -->
         <a v-on:click.prevent="click" href="https://google.com">Google</a>
+
+
+        <h2>Keyboard Events</h2>
+        <label>Name:</label>
+        <!-- only fires on the keyup of enter -->
+        <!-- v-model two way binds element to property in vue -->
+        <input type="text" v-model="name" v-on:keyup.enter="logName" />
+        <span>{{name}}</span>
+        <label>Age:</label>
+        <!-- fires on keyup of alt+enter -->
+        <input type="text" v-model="ageTwoWay" v-on:keyup.alt.enter="logAge" />
+        <span>{{ageTwoWay}}</span>
+
     </div>
     <script src="app.js"></script>
 </body>
