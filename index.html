@@ -195,18 +195,33 @@
 
     <hr />
 
+
     <!-- intro to components -->
     <div id="vue-components-1">
-            <h2>Vue Components App 1</h2>
-            <!-- this looks at vue and finds the component with the matching template name -->
-            <!-- template in vue takes over greeting tag -->
-            <greeting></greeting>
-        </div>
-    
-        <div id="vue-components-2">
-            <h2>Vue Components App 2</h2>
-            <greeting></greeting>
-        </div>
+        <h2>Vue Components App 1</h2>
+        <!-- this looks at vue and finds the component with the matching template name -->
+        <!-- template in vue takes over greeting tag -->
+        <greeting></greeting>
+    </div>
+
+    <div id="vue-components-2">
+        <h2>Vue Components App 2</h2>
+        <greeting></greeting>
+    </div>
+
+    <hr />
+
+
+    <!-- Referencing with $refs -->
+    <div id="vue-referencing">
+        <h2>Referencing with $refs</h2>
+        <!-- giving an element a ref attribute lets you grab it from the vue -->
+        <input type="text" ref="input" placeholder="Enter your favorite food!" />
+        <!-- runs function to make output = whatever was typed in -->
+        <button v-on:click="readRefs">Submit</button>
+        <p>Your fav food: {{output}}</p>
+        <div ref="test">Heyoo</div>
+    </div>
     <script src="app.js"></script>
 </body>
 

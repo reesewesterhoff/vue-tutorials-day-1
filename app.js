@@ -15,6 +15,7 @@ new Vue({
     }
 });
 
+//================================================================================
 
 new Vue({
     el: '#vue-events',
@@ -49,6 +50,7 @@ new Vue({
     }
 });
 
+//=============================================================================
 
 new Vue({
     el: '#vue-computed-properties',
@@ -83,6 +85,7 @@ new Vue({
     }
 });
 
+//===========================================================================
 
 new Vue({
     el: '#vue-dynamic-css',
@@ -100,6 +103,7 @@ new Vue({
     }
 });
 
+//===========================================================================
 
 new Vue({
     el: '#vue-conditionals',
@@ -109,6 +113,7 @@ new Vue({
     }
 });
 
+//=============================================================================
 
 new Vue({
     el: '#vue-loop',
@@ -122,6 +127,8 @@ new Vue({
         ]
     },
 });
+
+//===========================================================================
 
 new Vue({
     el: '#vue-game',
@@ -142,6 +149,8 @@ new Vue({
         }
     }
 });
+
+//==========================================================================
 
 let one = new Vue({
     el: '#multiple-vue-1',
@@ -177,13 +186,13 @@ let two = new Vue({
 // can change vues from wherever you want
 two.title = "changed from wherever";
 
-
+//============================================================================
 
 // first parameter is a string (name of component)
 // second parameter is an object
 Vue.component('greeting', {
     // template is what will be passed in when using this component
-    template:'<p>I am a {{name}}. <button v-on:click="changeName">Change Name</button></p>.',
+    template:'<p>I am a {{name}}. <button v-on:click="changeName">Change Name</button>.</p>',
     // must return a function because many vues will be using the same component
     // if it was not a function, it would update data for all vues using it
     data: function() {
@@ -205,3 +214,24 @@ new Vue({
 new Vue({
     el: '#vue-components-2'
 });
+
+//============================================================================
+
+new Vue({
+    el: '#vue-referencing',
+    data: {
+        output: ''
+    },
+    methods: {
+        readRefs: function () {
+            // logs whatever the text is for the element with the id of test
+            console.log(this.$refs.test.innerText);   
+            // output becomes whatever is typed into the input box (accessed through $refs)
+            this.output = this.$refs.input.value;
+            // clears input box
+            this.$refs.input.value = '';
+        }
+    }
+});
+
+//============================================================================
