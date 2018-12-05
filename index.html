@@ -176,6 +176,22 @@
             <button v-on:click="restart">Restart</button>
         </div>
     </div>
+
+    <hr />
+
+    <!-- multiple vue instances -->
+    <!-- each div is controlled by a different vue which means you have independent control over each one -->
+    <div id="multiple-vue-1">
+        <h2>{{title}}</h2>
+        <p>{{greet}}</p>
+    </div>
+
+    <!-- you are able to access any vue from any other vue -->
+    <div id="multiple-vue-2">
+        <h2>{{title}}</h2>
+        <p>{{greet}}</p>
+        <button v-on:click="changeTitle">Change App One Title</button>
+    </div>
     <script src="app.js"></script>
 </body>
 

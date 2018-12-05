@@ -142,3 +142,37 @@ new Vue({
         }
     }
 });
+
+let one = new Vue({
+    el: '#multiple-vue-1',
+    data: {
+        title: 'Vue App 1'
+    },
+    computed: {
+        greet: function () {
+            return 'Hello from app 1'
+        }
+    }
+});
+
+let two = new Vue({
+    el: '#multiple-vue-2',
+    data: {
+        title: 'Vue App 2'
+    },
+    methods: {
+        changeTitle: function () {
+            //calls vue one by it's variable name
+            one.title = 'Title changed'
+        }
+    },
+    computed: {
+        greet: function () {
+            return 'Hello from app 2'
+        }
+    }
+
+});
+
+// can change vues from wherever you want
+two.title = "changed from wherever";
