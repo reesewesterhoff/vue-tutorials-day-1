@@ -15,13 +15,16 @@
         <!-- passing data from vue to html -->
         <p>Name: {{name}}</p>
         <p>Job: {{job}}</p>
+
         <!-- passing a function and parameters between vue and html -->
         <p>{{greet('Morning')}}</p>
+
         <!-- data binding v-bind:whatever attribute you want to bind data to -->
         <a v-bind:href="website">Google</a>
         <br />
         <input type="text" v-bind:value="job">
         <br />
+        
         <!-- renders html tags written in vue -->
         <p v-html="websiteTag"></p>
     </div>
