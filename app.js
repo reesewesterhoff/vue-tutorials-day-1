@@ -83,6 +83,7 @@ new Vue({
     }
 });
 
+
 new Vue({
     el: '#vue-dynamic-css',
     data: {
@@ -96,5 +97,34 @@ new Vue({
                 nearby: this.nearby
             }
         }
+    }
+});
+
+
+new Vue({
+    el: '#vue-conditionals',
+    data: {
+        error: false,
+        success: false,
+    }
+});
+
+
+new Vue({
+    el: '#vue-loop',
+    data: {
+        shown: false,
+        characters: ['Mario', 'Luigi', 'Yoshi', 'Bowser'],
+        ninjas: [
+            {name: 'Ryu', age: 25},
+            {name: 'Yoshi', age: 46},
+            {name: 'Ken', age: 79}
+        ]
+    },
+    methods: {
+
+    },
+    computed: {
+
     }
 });

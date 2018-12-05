@@ -31,6 +31,7 @@
         <p v-html="websiteTag"></p>
     </div>
 
+    <hr />
 
     <!-- events tutorial -->
     <div id="vue-events">
@@ -53,6 +54,7 @@
         <!-- prevents default action that happens on click -->
         <a v-on:click.prevent="click" href="https://google.com">Google</a>
 
+        <hr />
 
         <h2>Keyboard Events</h2>
         <label>Name:</label>
@@ -65,6 +67,8 @@
         <input type="text" v-model="ageTwoWay" v-on:keyup.alt.enter="logAge" />
         <span>{{ageTwoWay}}</span>
     </div>
+
+    <hr />
 
     <!-- Computed properties -->
     <div id="vue-computed-properties">
@@ -83,6 +87,8 @@
         <p>Age + B = {{addToB}}</p>
     </div>
 
+    <hr />
+
     <!-- Dynamic CSS -->
     <div id="vue-dynamic-css">
         <h2>Dynamic CSS</h2>
@@ -95,11 +101,57 @@
         <!-- click toggles the boolean values of property in vue -->
         <button v-on:click="nearby = !nearby">Toggle Nearby</button>
         <button v-on:click="available = !available">Toggle Available</button>
-        
+
         <!-- has the computed class compClasses which is an object that has the properties of "nearby" and "available" -->
         <div v-bind:class="compClasses">
             <span>Taxi</span>
         </div>
+    </div>
+
+    <hr />
+
+    <!-- Conditionals -->
+    <div id="vue-conditionals">
+        <h2>Conditionals</h2>
+        <!-- toggles boolean values in vue on click of each button -->
+        <button v-on:click="error = !error">Toggle Error</button>
+        <button v-on:click="success = !success">Toggle Success</button>
+
+        <!-- v-if removes element if "error" is false -->
+        <!-- <p v-if="error">Error</p> -->
+
+        <!-- v-else-if checks to see if any other ifs are true, if they are, the element will not display -->
+        <!-- <p v-else-if="success">Success</p> -->
+
+        <!-- v-show sets display to none instead of removing element completely -->
+        <p v-show="error">Error</p>
+        <p v-show="success">Success</p>
+    </div>
+
+    <hr />
+
+    <!-- Looping with v-for -->
+    <div id="vue-loop">
+        <h2>Looping</h2>
+        <button v-on:click="shown = !shown">Toggle Show</button>
+        <ul v-bind:class="{shown: shown}">
+            <li v-for="(ninja, index) in ninjas">{{index}}, {{ninja.name}}, {{ninja.age}} </li>
+        </ul>
+        <ul>
+            <li v-for="character in characters">{{character}}</li>
+        </ul>
+        <!-- template just outputs whatever is inside it (unlike a div tag) -->
+        <!-- to see/use index just write it (ninja, index) instead of ninja -->
+        <template v-for="(ninja, index) in ninjas">
+            <h3>{{index}}. {{ninja.name}}</h3>
+            <p>{{ninja.age}}</p>
+        </template>
+        <!-- if the keys/values are unknown you can loop through each object in the loop to find out what they are -->
+        <template v-for="ninja in ninjas">
+            <div v-for="(val,key) in ninja">
+                <p>{{key}}, {{val}}</p>
+            </div>
+        </template>
     </div>
     <script src="app.js"></script>
 </body>
