@@ -121,10 +121,24 @@ new Vue({
             {name: 'Ken', age: 79}
         ]
     },
-    methods: {
+});
 
+new Vue({
+    el: '#vue-game',
+    data: {
+        health: 100,
+        ended: false,
     },
-    computed: {
-
+    methods: {
+        punch: function() {
+            this.health -= 10;
+            if(this.health <= 0) {
+                this.ended = true;
+            }
+        },
+        restart: function () {
+            this.health = 100;
+            this.ended = false;
+        }
     }
 });

@@ -153,6 +153,29 @@
             </div>
         </template>
     </div>
+
+    <hr />
+
+    <!-- game -->
+    <div id="vue-game">
+        <h2>Vue Game</h2>
+        <!-- bag image -->
+        <!-- when game "ended" is true, add burst class (changes background image) -->
+        <div id="bag" v-bind:class="{burst: ended}"></div>
+
+        <!-- bag health -->
+        <div id="bag-health">
+            <!-- change width of health bar when punched -->
+            <div v-bind:style="{width: health + '%'}"></div>
+        </div>
+        <!-- game controls -->
+        <div id="controls">
+            <!-- only show punch button when "ended" is not true -->
+            <button v-on:click="punch" v-show="!ended">Punch</button>
+            <!-- brings health back to 100 and changes ended to false -->
+            <button v-on:click="restart">Restart</button>
+        </div>
+    </div>
     <script src="app.js"></script>
 </body>
 
